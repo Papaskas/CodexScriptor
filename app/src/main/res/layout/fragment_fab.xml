@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_gravity="end|bottom">
 
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_call"
-            android:contentDescription="@string/item1"
-            android:layout_margin="16dp"/>
+            android:id="@+id/fab__settings"
+            android:src="@android:drawable/ic_input_add"
+            android:contentDescription="settings"
+            android:visibility="gone"
+            app:fabSize="mini"
+            style="@style/fab_fragment" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab__books"
+            android:src="@android:drawable/ic_input_add"
+            android:contentDescription="books"
+            android:visibility="gone"
+            app:fabSize="mini"
+            style="@style/fab_fragment" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab__main"
+            android:src="@drawable/ic_toggle_fab"
+            android:contentDescription="main"
+            style="@style/fab_fragment" />
 
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
