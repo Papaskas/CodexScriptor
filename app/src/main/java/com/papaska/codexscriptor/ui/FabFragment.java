@@ -1,8 +1,5 @@
 package com.papaska.codexscriptor.ui;
 
-import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.StateListDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +8,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -60,8 +56,7 @@ public class FabFragment extends Fragment {
         }
 
         private void toggleMainIcon() {
-            final int[] stateSet = {android.R.attr.state_focused * (isOpen ? 1 : -1)};
-            FABMain.setImageState(stateSet, true);
+            FABMain.setSelected(isOpen);
         }
 
         private void toggleVisible() {
