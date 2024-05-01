@@ -6,12 +6,18 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.NoteActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fab_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:name="com.papaska.codexscriptor.fragment.FabFragment" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/edit_markup_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.papaska.codexscriptor.fragment.EditMarkupFragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

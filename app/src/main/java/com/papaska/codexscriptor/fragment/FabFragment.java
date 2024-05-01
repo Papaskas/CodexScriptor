@@ -1,10 +1,11 @@
-package com.papaska.codexscriptor.ui;
+package com.papaska.codexscriptor.fragment;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,10 +13,16 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.papaska.codexscriptor.R;
-import com.papaska.codexscriptor.databinding.FragmentFabBinding;
+import com.papaska.codexscriptor.activity.MainActivity;
+import com.papaska.codexscriptor.activity.NoteActivity;
 
 public class FabFragment extends Fragment {
     private boolean isOpen = false;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_fab, container, false);
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -23,23 +30,13 @@ public class FabFragment extends Fragment {
 
         FloatingActionButton FABSettings = view.findViewById(R.id.fab__settings);
         FloatingActionButton FABBooks = view.findViewById(R.id.fab__books);
+        FloatingActionButton FABMain = view.findViewById(R.id.fab__main);
 
-        view.findViewById(R.id.fab__main).setOnClickListener((v) ->
-                new OnClickMainFAB((FloatingActionButton) v, FABSettings, FABBooks));
-
+        FABMain.setOnClickListener((mainFAB) -> new OnClickMainFAB(
+                (FloatingActionButton) mainFAB, FABSettings, FABBooks
+        ));
         FABBooks.setOnClickListener(this::onClickBooksFAB);
         FABSettings.setOnClickListener(this::onClickSettingsFAB);
-    }
-
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             @Nullable ViewGroup container,
-                             @Nullable Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
-
-        FragmentFabBinding binding = FragmentFabBinding.inflate(inflater, container, false);
-
-        return binding.getRoot();
     }
 
     private class OnClickMainFAB {
@@ -71,10 +68,18 @@ public class FabFragment extends Fragment {
     }
 
     private void onClickSettingsFAB(@NonNull View view) {
-        Toast.makeText(view.getContext(), "Settings", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this.getActivity(), MainActivity.class);
+        startActivity(intent);
     }
 
     private void onClickBooksFAB(@NonNull View view) {
-        Toast.makeText(view.getContext(), "Books", Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this.getActivity(), NoteActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void startActivity(@SuppressLint("UnknownNullness") Intent intent) {
+        intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+        super.startActivity(intent);
     }
 }
