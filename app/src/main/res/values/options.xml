@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="edit_text_">
+
+        <string name="default_">
+            <string name="font_family">A</string>
+            <string name="line_height">10dp</string>
+            <string name="background">img or #HEX</string>
+            <string name="text_color">#HEX</string>
+            <string name="text_size">10dp</string>
+            <string name="distance_between_paragraph">10dp</string>
+        </string>
+
+        <string name="custom_">
+            <string name="font_family">A</string>
+            <string name="line_height">10dp</string>
+            <string name="background">img or #HEX</string>
+            <string name="text_color">#HEX</string>
+            <string name="text_size">10dp</string>
+            <string name="distance_between_paragraph">10dp</string>
+        </string>
+
+    </string>
+</resources>

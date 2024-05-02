@@ -2,6 +2,7 @@ package com.papaska.codexscriptor.activity;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
