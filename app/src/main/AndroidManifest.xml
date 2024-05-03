@@ -13,8 +13,14 @@
         android:theme="@style/Theme.CodexScriptor"
         tools:targetApi="31">
         <activity
+            android:name=".activity.NavigationActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"
+            android:label="@string/title_activity_navigation" />
+        <activity
             android:name=".activity.NoteActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".activity.MainActivity"
             android:exported="true">

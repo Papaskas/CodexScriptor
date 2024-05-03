@@ -12,12 +12,20 @@
         android:layout_margin="15dp">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab__menu"
+            android:src="@android:drawable/ic_input_add"
+            android:contentDescription="menu"
+            android:visibility="gone"
+            app:fabSize="mini"
+            style="@style/fab_item" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab__settings"
             android:src="@android:drawable/ic_input_add"
             android:contentDescription="settings"
             android:visibility="gone"
             app:fabSize="mini"
-            style="@style/fab_fragment" />
+            style="@style/fab_item" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab__books"
@@ -25,13 +33,13 @@
             android:contentDescription="books"
             android:visibility="gone"
             app:fabSize="mini"
-            style="@style/fab_fragment" />
+            style="@style/fab_item" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab__main"
             android:src="@drawable/ic_toggle_fab"
             android:contentDescription="main"
-            style="@style/fab_fragment" />
+            style="@style/fab_item" />
 
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -58,11 +58,8 @@ public class FabFragment extends Fragment {
 
         private void toggleVisible() {
             for (FloatingActionButton FAB : secondaryFABs) {
-                if(FAB.getVisibility() == View.GONE)
-                    FAB.show();
-
-                else if(FAB.getVisibility() == View.VISIBLE)
-                    FAB.hide();
+                if(FAB.getVisibility() == View.GONE) FAB.show();
+                else if(FAB.getVisibility() == View.VISIBLE) FAB.hide();
             }
         }
     }

@@ -1,30 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="50dp"
-    android:orientation="vertical">
+    android:layout_marginTop="40dp">
 
     <EditText
         android:id="@+id/heading_markup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
         android:autofillHints="Heading"
+        android:background="@color/teal_200"
         android:inputType="textMultiLine"
+        android:padding="10dp"
         android:textAlignment="center"
-        android:background="@color/teal_200" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/edit_markup"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp"
+        android:layout_height="0dp"
+        android:autofillHints="Main text"
+        android:background="@color/teal_700"
         android:inputType="textMultiLine"
         android:nestedScrollingEnabled="true"
         android:gravity="top"
+        android:padding="10dp"
         android:singleLine="false"
-        android:autofillHints="Main text"
-        android:background="@color/teal_700" />
+        app:layout_constraintTop_toBottomOf="@id/heading_markup"
+        app:layout_constraintBottom_toBottomOf="parent" />
 
-</LinearLayout>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/markup_keys_fragment"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:name="com.papaska.codexscriptor.fragment.MarkupKeysFragment"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
